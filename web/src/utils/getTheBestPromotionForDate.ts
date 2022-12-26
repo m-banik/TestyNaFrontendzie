@@ -1,4 +1,4 @@
-import { Promotion } from "../types/Promotion";
+import { Promotion } from '../types/Promotion';
 
 export const getTheBestPromotionForDate = (
   date: Date,
@@ -8,7 +8,7 @@ export const getTheBestPromotionForDate = (
     (prom: Promotion) => prom.dateStart < date && prom.dateEnd > date
   );
 
-  if (!currentPromotions) {
+  if (!currentPromotions || currentPromotions.length === 0) {
     return null;
   }
 
